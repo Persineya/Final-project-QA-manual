@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "ca2acafc-5aa6-494d-bac5-80facbf2bf66",
+		"name": "VK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new albom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test albom",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "la la la",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.createAlbum/?owner_id=14399032&title=Test albom&description=la la la&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.createAlbum",
+						""
+					],
+					"query": [
+						{
+							"key": "privacy",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "comment_privacy",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "privacy_view",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "privacy_comment",
+							"value": "only_me",
+							"disabled": true
+						},
+						{
+							"key": "upload_by_admins_only",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "comments_disabled",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "group_id",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "title",
+							"value": "Test albom"
+						},
+						{
+							"key": "description",
+							"value": "la la la"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						},
+						{
+							"key": "scope",
+							"value": "photos",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get URL apload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.vk.com/method/photos.getUploadServer?album_id=287899705&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.getUploadServer"
+					],
+					"query": [
+						{
+							"key": "album_id",
+							"value": "287899705"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add two photo to server",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file1",
+							"type": "file",
+							"src": "/C:/Users/Persi/OneDrive/Pictures/pic01.png"
+						},
+						{
+							"key": "file2",
+							"type": "file",
+							"src": "/C:/Users/Persi/OneDrive/Pictures/Petya.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://pu.vk.com/c519136/ss2226/upload.php?act=do_add&mid=14399032&aid=287899705&gid=0&hash=a13395732d0ae884386aa19dce78cc4b&rhash=7e3cc5d4981d1871dcbaaaaa5b82b012&swfupload=1&api=1",
+					"protocol": "https",
+					"host": [
+						"pu",
+						"vk",
+						"com"
+					],
+					"path": [
+						"c519136",
+						"ss2226",
+						"upload.php"
+					],
+					"query": [
+						{
+							"key": "act",
+							"value": "do_add"
+						},
+						{
+							"key": "mid",
+							"value": "14399032"
+						},
+						{
+							"key": "aid",
+							"value": "287899705"
+						},
+						{
+							"key": "gid",
+							"value": "0"
+						},
+						{
+							"key": "hash",
+							"value": "a13395732d0ae884386aa19dce78cc4b"
+						},
+						{
+							"key": "rhash",
+							"value": "7e3cc5d4981d1871dcbaaaaa5b82b012"
+						},
+						{
+							"key": "swfupload",
+							"value": "1"
+						},
+						{
+							"key": "api",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add two photos in albom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Petya",
+							"type": "file",
+							"src": "/C:/Users/Persi/OneDrive/Pictures/Petya.jpg",
+							"disabled": true
+						},
+						{
+							"key": "Phoenix",
+							"type": "file",
+							"src": "/C:/Users/Persi/OneDrive/Pictures/Phoenix.jpg",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.save?album_id=287899705&server=519136&v=5.131&photos_list=[{\"markers_restarted\":true,\"photo\":\"469e3c433f:z\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6adda2e0b1d1129271bad78a272d92ba\",\"sizes2\":[[\"s\",\"db6a0d0d3913cf6761b023c517e7261035631b16c8076bc3fc4cc6f5\",\"-6419930494295547901\",75,49],[\"m\",\"ba6143ef4e2f11d7b6af3c1d3e896099c185c3237d842608999f2528\",\"-7273987717124398255\",130,85],[\"x\",\"67a7e9455e5b207a2521041bba83ad3af056b1f7402d8ea7ef283962\",\"-2717834428687581822\",604,397],[\"y\",\"8556b6427916487ad17e6b0719f7addb242911d1105714e837272b9b\",\"4327082636198958044\",807,531],[\"z\",\"54a8dcbd898253f0d75dd53f6a95b49e8af25fbecb6e0ad88b8496d6\",\"-4637964801197898546\",946,623],[\"o\",\"50fccca2006834360628ad22944e207780c62c9f7999ab8c4cad5754\",\"1149717208724324604\",130,87],[\"p\",\"d53e6d1579c2f4a472e48bdece4cb09868d5be3db809c9fe75ce88cb\",\"-3874474904970087096\",200,133],[\"q\",\"b5af325e545391c3166cf07be4a6ada0675be1c52441bd48a965ce5f\",\"1928954653822871892\",320,213],[\"r\",\"b03d68fb8d4d1b0cb779d10ae942f033f8871967303746b8444a4d6f\",\"5094928436930913847\",510,340]],\"urls\":[],\"urls2\":[\"22oNDTkTz2dhsCPFF-cmEDVjGxbIB2vD_EzG9Q/A-DQzDrT56Y.jpg\",\"umFD704vEde2rzwdPolgmcGFwyN9hCYImZ8lKA/UeM-5LWaDZs.jpg\",\"Z6fpRV5bIHolIQQbuoOtOvBWsfdALY6n7yg5Yg/gv2_n_xPSNo.jpg\",\"hVa2QnkWSHrRfmsHGfet2yQpEdEQVxToNycrmw/3FNmVLviDDw.jpg\",\"VKjcvYmCU_DXXdU_apW0noryX77LbgrYi4SW1g/zoTVF5ajor8.jpg\",\"UPzMogBoNDYGKK0ilE4gd4DGLJ95mauMTK1XVA/_MAqurWd9A8.jpg\",\"1T5tFXnC9KRy5IvezkywmGjVvj24Ccn-dc6Iyw/SLUXDpoZO8o.jpg\",\"ta8yXlRTkcMWbPB75KatoGdb4cUkQb1IqWXOXw/VOnyoAkGxRo.jpg\",\"sD1o-41NGwy3edEK6ULwM_iHGWcwN0a4REpNbw/N6ZNV2vStEY.jpg\"]},{\"markers_restarted\":true,\"photo\":\"4c5bb6b13e:z\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6d9547e81c3052b89a1d76562b0e5d9d\",\"sizes2\":[[\"s\",\"aac2ea9e23763513e2ebb171533921ac31ab4e796eb2c2e63ffce2ca\",\"-2048402455521226272\",75,50],[\"m\",\"f66734948635dd76f0b2d678542e921001a348d97c7e68fdc089f7ea\",\"6099347862997075636\",130,87],[\"x\",\"4369df6652ada766545838ea8afa89474f5cd6b0e9b67b4558edbad3\",\"-8829045038112756962\",604,403],[\"y\",\"30737d304a6a1ef112832dfc98d593f315a50df744d68cd5545c4d52\",\"3819688587508686483\",807,538],[\"z\",\"f75554774ba5d1341bb7bda4ee6a4c4aabf13f2f22fce1f69d1f36ad\",\"1575519324736538070\",1024,683],[\"o\",\"f66734948635dd76f0b2d678542e921001a348d97c7e68fdc089f7ea\",\"6099347862997075636\",130,87],[\"p\",\"58554ade2f6dfa3b17fb4fba1aa9fff55da7308d74f0b95617e27055\",\"-3690950240220024478\",200,133],[\"q\",\"8a0adc1c3841abe26f1a96db73e9bfb8ef5e8b02bca48960589dfa51\",\"-693510425225839853\",320,213],[\"r\",\"185f176c56dc47b7be6a74aa16c06a005210018fd5add27e84fb5444\",\"-2349150115007620897\",510,340]],\"urls\":[],\"urls2\":[\"qsLqniN2NRPi67FxUzkhrDGrTnlussLmP_ziyg/4JGe0dGckuM.jpg\",\"9mc0lIY13XbwstZ4VC6SEAGjSNl8fmj9wIn36g/tIZ6z5A8pVQ.jpg\",\"Q2nfZlKtp2ZUWDjqivqJR09c1rDptntFWO260w/Hitd7VDueIU.jpg\",\"MHN9MEpqHvESgy38mNWT8xWlDfdE1ozVVFxNUg/k54RY4hCAjU.jpg\",\"91VUd0ul0TQbt72k7mpMSqvxPy8i_OH2nR82rQ/1kWvd3pe3RU.jpg\",\"9mc0lIY13XbwstZ4VC6SEAGjSNl8fmj9wIn36g/tIZ6z5A8pVQ.jpg\",\"WFVK3i9t-jsX-0-6Gqn_9V2nMI108LlWF-JwVQ/YvEK4E8cx8w.jpg\",\"igrcHDhBq-JvGpbbc-m_uO9eiwK8pIlgWJ36UQ/EztiUPEnYPY.jpg\",\"GF8XbFbcR7e-anSqFsBqAFIQAY_VrdJ-hPtURA/3xjnrmokZt8.jpg\"]}]&hash=446a882d4bddb78489b5759a49908e8e&aid=14399032",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.save"
+					],
+					"query": [
+						{
+							"key": "album_id",
+							"value": "287899705"
+						},
+						{
+							"key": "server",
+							"value": "519136"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						},
+						{
+							"key": "group_id",
+							"value": "14399032",
+							"disabled": true
+						},
+						{
+							"key": "latitude",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "longitude",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "caption",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "photos_list",
+							"value": "[{\"markers_restarted\":true,\"photo\":\"469e3c433f:z\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6adda2e0b1d1129271bad78a272d92ba\",\"sizes2\":[[\"s\",\"db6a0d0d3913cf6761b023c517e7261035631b16c8076bc3fc4cc6f5\",\"-6419930494295547901\",75,49],[\"m\",\"ba6143ef4e2f11d7b6af3c1d3e896099c185c3237d842608999f2528\",\"-7273987717124398255\",130,85],[\"x\",\"67a7e9455e5b207a2521041bba83ad3af056b1f7402d8ea7ef283962\",\"-2717834428687581822\",604,397],[\"y\",\"8556b6427916487ad17e6b0719f7addb242911d1105714e837272b9b\",\"4327082636198958044\",807,531],[\"z\",\"54a8dcbd898253f0d75dd53f6a95b49e8af25fbecb6e0ad88b8496d6\",\"-4637964801197898546\",946,623],[\"o\",\"50fccca2006834360628ad22944e207780c62c9f7999ab8c4cad5754\",\"1149717208724324604\",130,87],[\"p\",\"d53e6d1579c2f4a472e48bdece4cb09868d5be3db809c9fe75ce88cb\",\"-3874474904970087096\",200,133],[\"q\",\"b5af325e545391c3166cf07be4a6ada0675be1c52441bd48a965ce5f\",\"1928954653822871892\",320,213],[\"r\",\"b03d68fb8d4d1b0cb779d10ae942f033f8871967303746b8444a4d6f\",\"5094928436930913847\",510,340]],\"urls\":[],\"urls2\":[\"22oNDTkTz2dhsCPFF-cmEDVjGxbIB2vD_EzG9Q/A-DQzDrT56Y.jpg\",\"umFD704vEde2rzwdPolgmcGFwyN9hCYImZ8lKA/UeM-5LWaDZs.jpg\",\"Z6fpRV5bIHolIQQbuoOtOvBWsfdALY6n7yg5Yg/gv2_n_xPSNo.jpg\",\"hVa2QnkWSHrRfmsHGfet2yQpEdEQVxToNycrmw/3FNmVLviDDw.jpg\",\"VKjcvYmCU_DXXdU_apW0noryX77LbgrYi4SW1g/zoTVF5ajor8.jpg\",\"UPzMogBoNDYGKK0ilE4gd4DGLJ95mauMTK1XVA/_MAqurWd9A8.jpg\",\"1T5tFXnC9KRy5IvezkywmGjVvj24Ccn-dc6Iyw/SLUXDpoZO8o.jpg\",\"ta8yXlRTkcMWbPB75KatoGdb4cUkQb1IqWXOXw/VOnyoAkGxRo.jpg\",\"sD1o-41NGwy3edEK6ULwM_iHGWcwN0a4REpNbw/N6ZNV2vStEY.jpg\"]},{\"markers_restarted\":true,\"photo\":\"4c5bb6b13e:z\",\"sizes\":[],\"latitude\":0,\"longitude\":0,\"kid\":\"6d9547e81c3052b89a1d76562b0e5d9d\",\"sizes2\":[[\"s\",\"aac2ea9e23763513e2ebb171533921ac31ab4e796eb2c2e63ffce2ca\",\"-2048402455521226272\",75,50],[\"m\",\"f66734948635dd76f0b2d678542e921001a348d97c7e68fdc089f7ea\",\"6099347862997075636\",130,87],[\"x\",\"4369df6652ada766545838ea8afa89474f5cd6b0e9b67b4558edbad3\",\"-8829045038112756962\",604,403],[\"y\",\"30737d304a6a1ef112832dfc98d593f315a50df744d68cd5545c4d52\",\"3819688587508686483\",807,538],[\"z\",\"f75554774ba5d1341bb7bda4ee6a4c4aabf13f2f22fce1f69d1f36ad\",\"1575519324736538070\",1024,683],[\"o\",\"f66734948635dd76f0b2d678542e921001a348d97c7e68fdc089f7ea\",\"6099347862997075636\",130,87],[\"p\",\"58554ade2f6dfa3b17fb4fba1aa9fff55da7308d74f0b95617e27055\",\"-3690950240220024478\",200,133],[\"q\",\"8a0adc1c3841abe26f1a96db73e9bfb8ef5e8b02bca48960589dfa51\",\"-693510425225839853\",320,213],[\"r\",\"185f176c56dc47b7be6a74aa16c06a005210018fd5add27e84fb5444\",\"-2349150115007620897\",510,340]],\"urls\":[],\"urls2\":[\"qsLqniN2NRPi67FxUzkhrDGrTnlussLmP_ziyg/4JGe0dGckuM.jpg\",\"9mc0lIY13XbwstZ4VC6SEAGjSNl8fmj9wIn36g/tIZ6z5A8pVQ.jpg\",\"Q2nfZlKtp2ZUWDjqivqJR09c1rDptntFWO260w/Hitd7VDueIU.jpg\",\"MHN9MEpqHvESgy38mNWT8xWlDfdE1ozVVFxNUg/k54RY4hCAjU.jpg\",\"91VUd0ul0TQbt72k7mpMSqvxPy8i_OH2nR82rQ/1kWvd3pe3RU.jpg\",\"9mc0lIY13XbwstZ4VC6SEAGjSNl8fmj9wIn36g/tIZ6z5A8pVQ.jpg\",\"WFVK3i9t-jsX-0-6Gqn_9V2nMI108LlWF-JwVQ/YvEK4E8cx8w.jpg\",\"igrcHDhBq-JvGpbbc-m_uO9eiwK8pIlgWJ36UQ/EztiUPEnYPY.jpg\",\"GF8XbFbcR7e-anSqFsBqAFIQAY_VrdJ-hPtURA/3xjnrmokZt8.jpg\"]}]"
+						},
+						{
+							"key": "hash",
+							"value": "446a882d4bddb78489b5759a49908e8e"
+						},
+						{
+							"key": "aid",
+							"value": "14399032"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список фото в альбоме",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.vk.com/method/photos.get?owner_id=14399032&album_id=287899705&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.get"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "album_id",
+							"value": "287899705"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление Comment к фото1 в альбоме",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.createComment?owner_id=14399032&photo_id=457248667&message=красавчик&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.createComment"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "photo_id",
+							"value": "457248667"
+						},
+						{
+							"key": "message",
+							"value": "красавчик"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление Comment к фото2 в альбоме",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.createComment?owner_id=14399032&photo_id=457248668&message=ляпота&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.createComment"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "photo_id",
+							"value": "457248668"
+						},
+						{
+							"key": "message",
+							"value": "ляпота"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование Comment к фото1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.editComment?owner_id=14399032&photo_id=457248667&message=Ух, какая!&v=5.131&comment_id=1520",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.editComment"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "photo_id",
+							"value": "457248667"
+						},
+						{
+							"key": "message",
+							"value": "Ух, какая!"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						},
+						{
+							"key": "comment_id",
+							"value": "1520"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление  фото1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.delete?owner_id=14399032&photo_id=457248667&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.delete"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "photo_id",
+							"value": "457248667"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление  альбома",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "vk1.a.8DCbuhzZ3I9zl96_1eD7XMyFWOvhIqhEKHGf_krrjC9qhopZA639C7P37zDRjK0BeefC4qLXuOxvOLPJzWIY6iNkRkYXJxpGdrU9bcOkEn791khWdTmPUndmkU8KlgDrhLIsIYRrXJ9ysUBY6nyovonjN-CRIuBbNNROBKQRV_34fZ3Z3htKiXN4iiydIbA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.deleteAlbum?owner_id=14399032&album_id=287899705&v=5.131",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.deleteAlbum"
+					],
+					"query": [
+						{
+							"key": "owner_id",
+							"value": "14399032"
+						},
+						{
+							"key": "album_id",
+							"value": "287899705"
+						},
+						{
+							"key": "v",
+							"value": "5.131"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "vk1.a.uZB5Tl2XiY_V2jckSKLcNNPv4cQ3qjw71fxGhwgCAkTdTNTeNHsTjLca6hrCl9tkshzV48wvoko_UtDHZ8BTQ_8wYqi8pfdjucdiHLE5BUOP9AbOiv4xor9lUI30j35i2A8agDWX1J2Qbjy681AMLqIZOg5_IRvMFs8V4XxCp_4x5_6RHeyNG7-LRoDEO-rO",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	]
+}
